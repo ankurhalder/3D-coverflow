@@ -57,18 +57,41 @@ const Slide = ({ slide, offset }) => {
         "--dir": offset === 0 ? 0 : offset > 0 ? 1 : -1,
       }}
     >
-      <div
-        className="slideBackground"
-        style={{
-          backgroundImage: `url('${slide.image}')`,
-        }}
-      />
-      <div
-        className="slideContent"
-        style={{
-          backgroundImage: `url('${slide.image}')`,
-        }}
-      >
+      <div className="slideBackground">
+        <video
+          src={slide.video}
+          autoPlay
+          loop
+          muted
+          title={slide.title}
+          alt={`Video of ${slide.title}`}
+          poster={slide.poster}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+        >
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div className="slideContent">
+        <video
+          src={slide.video}
+          autoPlay
+          loop
+          muted
+          title={slide.title}
+          alt={`Video of ${slide.title}`}
+          poster={slide.poster}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+        >
+          Your browser does not support the video tag.
+        </video>
         <div className="slideContentInner">
           <h2 className="slideTitle">{slide.title}</h2>
           <h3 className="slideSubtitle">{slide.subtitle}</h3>
