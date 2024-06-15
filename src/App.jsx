@@ -1,6 +1,10 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+import { useRef, useEffect } from "react";
 import Slide from "./Slide";
-import "./App.css";
-import { useReducer } from "react";
+import "./App.scss"; // Importing SCSS file for styling
+import { useReducer, Fragment } from "react";
+
 const slides = [
   {
     title: "Machu Picchu",
@@ -50,14 +54,18 @@ const App = () => {
   const [state, dispatch] = useReducer(slidesReducer, initialState);
 
   return (
-    <div className="slides">
-      <button onClick={() => dispatch({ type: "PREV" })}>‹</button>
-      {[...slides, ...slides, ...slides].map((slide, i) => {
-        let offset = slides.length + (state.slideIndex - i);
-        return <Slide slide={slide} offset={offset} key={i} />;
-      })}
-      <button onClick={() => dispatch({ type: "NEXT" })}>›</button>
-    </div>
+    <Fragment>
+      <div className="coverflow">
+        <div className="slides">
+          <button onClick={() => dispatch({ type: "PREV" })}>‹</button>
+          {[...slides, ...slides, ...slides].map((slide, i) => {
+            let offset = slides.length + (state.slideIndex - i);
+            return <Slide slide={slide} offset={offset} key={i} />;
+          })}
+          <button onClick={() => dispatch({ type: "NEXT" })}>›</button>
+        </div>
+      </div>
+    </Fragment>
   );
 };
 
