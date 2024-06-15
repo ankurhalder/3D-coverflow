@@ -6,24 +6,23 @@ const slides = [
     title: "Machu Picchu",
     subtitle: "Peru",
     description: "Adventure is never far away",
-    video: "1.mp4",
+    video: "spaceotaku.mp4",
     poster: "a.jpg",
   },
   {
     title: "Chamonix",
     subtitle: "France",
     description: "Let your dreams come true",
-    video: "2.mp4",
+    video: "eduversavid.mp4",
     poster: "b.jpg",
   },
   {
     title: "Mimisa Rocks",
     subtitle: "Australia",
     description: "A piece of heaven",
-    video: "3.mp4",
+    video: "adcomsys.mp4",
     poster: "c.jpg",
   },
-  // Add more slides as needed
 ];
 
 const initialState = {
